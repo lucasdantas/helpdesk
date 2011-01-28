@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  titulo: MyString
+  customer: 
+  status: MyString
+  descricao: MyText
+  conclusao: MyText
+  operator_ini: 1
+  operator_fim: 1
+
+two:
+  titulo: MyString
+  customer: 
+  status: MyString
+  descricao: MyText
+  conclusao: MyText
+  operator_ini: 1
+  operator_fim: 1

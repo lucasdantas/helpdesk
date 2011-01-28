@@ -1,0 +1,35 @@
+<%= form_for(@institution) do |f| %>
+  <% if @institution.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@institution.errors.count, "error") %> prohibited this institution from being saved:</h2>
+
+      <ul>
+      <% @institution.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+	<div class="field">
+    <%= f.label :fone1, 'Fone 1' %><br />
+    <%= f.text_field :fone1 %>
+  </div>
+	<div class="field">
+    <%= f.label :fone2, 'Fone 2' %><br />
+    <%= f.text_field :fone2 %>
+  </div>
+  <div class="field">
+    <%= f.label :responsavel, 'Reponsável' %><br />
+    <%= f.text_field :responsavel %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', "javascript:history.back(-1)" %>

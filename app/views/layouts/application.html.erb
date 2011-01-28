@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Helpdesk</title>
+  
+	<%= stylesheet_link_tag "scaffold.css" %>
+	<%= stylesheet_link_tag "../fancybox/jquery.fancybox-1.3.4.css" %>
+	
+	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" %>
+	<%= javascript_include_tag "../fancybox/jquery.fancybox-1.3.4.pack.js" %>
+	<%= javascript_include_tag :defaults %>
+	<%= csrf_meta_tag %>
+
+	<script>
+	$(document).ready(function() {
+		$(".comment_box").fancybox({
+			'width'				: '55%',
+			'height'			: '65%',
+			'autoScale'			: false,
+			'transitionIn'		: 'elastic',
+			'speedIn'		:	400,
+			'transitionOut'		: 'none',
+			'type'				: 'iframe',
+			'onCleanup' : function() {
+			                  window.location = idChamado;
+			      }
+		});
+	});
+	</script>
+</head>
+<body>
+	<script>
+	$('form').submit(function(data) {
+	           idChamado = data;
+	        parent.$.fancybox.close();
+	         return false;
+	       });
+	</script>
+	
+	<p><%= flash[:notice] %></p>
+
+	<%= yield %>
+
+</body>
+</html>

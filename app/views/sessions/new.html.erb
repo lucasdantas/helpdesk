@@ -1,0 +1,15 @@
+<h1>Login</h1>
+
+<%= form_tag(sessions_path :method => "post") do %>
+	<div class="field">
+		<%= label_tag(:email) %>
+		<%= text_field_tag(:email) %>
+	</div>
+	<div class="field">
+		<%= label_tag(:senha) %>
+		<%= password_field_tag(:senha) %>
+	</div>
+	<div class="actions">	
+		<%= submit_tag("Entrar") %>
+	</div>	
+<% end %>

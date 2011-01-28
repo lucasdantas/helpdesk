@@ -1,0 +1,37 @@
+<p>
+  <b>Título:</b>
+  <%= @ticket.titulo %>
+</p>
+
+<p>
+  <b>Descrição:</b>
+  <%= @ticket.descricao %>
+</p>
+
+<div id="comments">
+<h2>Comments</h2>
+	<% @ticket.comments.each do |comment| %>
+  	<p>
+    	<b>Commenter:</b>
+    	<%= comment.operator.nome %>
+  	</p>
+ 
+  	<p>
+    	<b>Comment:</b>
+    	<%= comment.descricao %>
+  	</p>
+
+		<p>
+			<%= link_to 'Destroy Comment', comment,
+		               :confirm => 'Are you sure?',
+		               :method => :delete %>
+		</p>
+		
+		<a class="comment_box" href="<%= edit_comment_path(comment) %>">Edit</a>
+	<% end %>
+</div>
+
+
+<a class="comment_box" href="<%= new_comment_path(:id => @ticket.id) %>">Novo comentario</a>
+	
+<%= link_to 'Back', "javascript:history.back(-1)" %>

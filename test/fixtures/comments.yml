@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ticket: 
+  operator: 
+  descricao: MyText
+
+two:
+  ticket: 
+  operator: 
+  descricao: MyText
